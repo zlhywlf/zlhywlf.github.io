@@ -1,0 +1,8 @@
+# 行字符的长度
+printWidth: 80
+# 使用单引号
+singleQuote: true
+# 不添加在多行输入的尾逗号
+trailingComma: none
+# 语句末尾不加分号
+semi: false
