@@ -20,3 +20,9 @@ vite 与 vitepress 学习项目。
   - vue
 - [resolve-cwd](https://www.npmjs.com/package/resolve-cwd)
   - 从当前工作目录解析已安装模块的引入路径
+- [yorkie](https://www.npmjs.com/package/yorkie)
+  - Git hooks
+- [npm-run-all](https://www.npmjs.com/package/npm-run-all)
+  - 用于并行或顺序运行多个 npm 脚本的 CLI 工具
+- [lint-staged](https://www.npmjs.com/package/lint-staged)
+  - 对暂存的 git 文件运行 linters
