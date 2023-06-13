@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>init</title>
-  </head>
-  <body>
-    <h1>init</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>init</title>
+</head>
+
+<body>
+  <h1>init</h1>
+</body>
+<script>
+  // WebSocket 是应用在浏览器的 Socket
+  // 用于创建和管理 WebSocket 连接，以及可以通过该连接发送和接收数据
+  const socket = new WebSocket(`ws://${location.host}`)
+
+  // 当通过 WebSocket 收到数据时触发。 也可以通过 onmessage 属性来设置。
+  socket.addEventListener('message', (event) => {
+    console.log('message', event);
+  })
+
+  // 当一个 WebSocket 连接被关闭时触发。 也可以通过 onclose 属性来设置。
+  socket.addEventListener('close', (event) => {
+    console.log('close', event);
+  })
+
+  // 当一个 WebSocket 连接因错误而关闭时触发，例如无法发送数据时。 也可以通过 onerror 属性来设置。
+  socket.addEventListener('error', (event) => {
+    console.log('error', event);
+  })
+
+  // 当一个 WebSocket 连接成功时触发。 也可以通过 onopen 属性来设置。
+  socket.addEventListener('open', (event) => {
+    console.log('open', event);
+  })
+</script>
+
 </html>

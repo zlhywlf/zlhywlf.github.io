@@ -26,3 +26,19 @@ vite 与 vitepress 学习项目。
   - 用于并行或顺序运行多个 npm 脚本的 CLI 工具
 - [lint-staged](https://www.npmjs.com/package/lint-staged)
   - 对暂存的 git 文件运行 linters
+- [execa](https://www.npmjs.com/package/execa)
+  - 执行终端命令
+- [jest](https://www.npmjs.com/package/jest)
+  - 测试
+- [puppeteer](https://www.npmjs.com/package/puppeteer)
+  - 模拟浏览器
+  - ubuntu 依赖问题
+    - [chrome](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux)
+    - 手动
+      ```bash
+      sudo apt install libgtk-3-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+      ```
+- [typescript](https://www.npmjs.com/package/typescript)
+  - typescript
+- [prettier](https://www.npmjs.com/package/prettier)
+  - 格式化
