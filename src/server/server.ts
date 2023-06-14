@@ -5,10 +5,10 @@ import serve from 'serve-handler'
 import url from 'url'
 import WebSocket from 'ws'
 import { sendJS } from './utils'
-import { moduleMiddleware } from './moduleMiddleware'
 import { rewrite } from './moduleRewriter'
-import { vueMiddleware } from './vueMiddleware'
-import { createFileWatcher } from './hmrWatcher'
+import { vueMiddleware } from './vueCompiler'
+import { resolveModule } from './moduleResolver'
+import { createFileWatcher } from './watcher'
 
 export interface ServerConfig {
   port?: number
@@ -16,7 +16,8 @@ export interface ServerConfig {
 }
 
 export async function createServer({
-  port = 3000
+  port = 3000,
+  cwd = process.cwd()
 }: ServerConfig = {}): Promise<Server> {
   // WebSocket 客户端代码 Buffer
   const hmrClientCode = await fs.readFile(
@@ -41,12 +42,12 @@ export async function createServer({
       return sendJS(res, hmrClientCode)
     } else if (pathname.startsWith('/__modules/')) {
       // 处理依赖
-      return moduleMiddleware(pathname.replace('/__modules/', ''), res)
+      return resolveModule(pathname.replace('/__modules/', ''), cwd, res)
     } else if (pathname.endsWith('.vue')) {
       // 处理 vue 类型文件
-      return vueMiddleware(req, res)
+      return vueMiddleware(cwd, req, res)
     } else if (pathname.endsWith('.js')) {
-      const filename = path.join(process.cwd(), pathname.slice(1))
+      const filename = path.join(cwd, pathname.slice(1))
       try {
         const content = await fs.readFile(filename, 'utf-8')
         // 重写导入导出
@@ -61,6 +62,7 @@ export async function createServer({
     }
 
     serve(req, res, {
+      public: cwd ? path.relative(process.cwd(), cwd) : '/',
       rewrites: [{ source: '**', destination: '/index.html' }]
     })
   })
@@ -98,7 +100,7 @@ export async function createServer({
    * fileWatcher
    * **********************************************
    */
-  createFileWatcher((payload) =>
+  createFileWatcher(cwd, (payload) =>
     sockets.forEach((s) => s.send(JSON.stringify(payload)))
   )
 

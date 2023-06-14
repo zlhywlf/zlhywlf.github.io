@@ -1,11 +1,14 @@
 {
-    "extends": "../../tsconfig.base.json",
-    "compilerOptions": {
-      "baseUrl": ".",
-      "outDir": "../../dist/server",
-      "module": "commonjs",
-      "lib": ["ESNext"]
-    },
-    "include": ["./"]
-  }
-  
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../dist/server",
+    "module": "commonjs",
+    "lib": [
+      "ESNext"
+    ]
+  },
+  "include": [
+    "./"
+  ]
+}

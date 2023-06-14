@@ -27,15 +27,19 @@ beforeAll(async () => {
 })
 
 afterAll(async () => {
-  await browser.close()
   await fs.rm(tempDir, { recursive: true })
-  server.kill('SIGTERM', {
-    forceKillAfterTimeout: 2000
-  })
+  if (browser) {
+    await browser.close()
+  }
+  if (server) {
+    server.kill('SIGTERM', {
+      forceKillAfterTimeout: 2000
+    })
+  }
 })
 
 test('test', async () => {
-  server = execa('node', [path.resolve(__dirname, '../bin/vds.js')], {
+  server = execa('node', [path.resolve(__dirname, '../bin/vite.js')], {
     cwd: tempDir
   })
 
@@ -47,10 +51,14 @@ test('test', async () => {
     })
   })
 
-  browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  })
+  browser = await puppeteer.launch(
+    process.platform === 'linux'
+      ? {
+          headless: 'new',
+          args: ['--no-sandbox', '--disable-setuid-sandbox']
+        }
+      : {}
+  )
   const page = await browser.newPage()
   await page.goto('http://localhost:3000')
   const button = await page.$('button')

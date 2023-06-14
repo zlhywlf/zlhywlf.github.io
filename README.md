@@ -42,3 +42,9 @@ vite 与 vitepress 学习项目。
   - typescript
 - [prettier](https://www.npmjs.com/package/prettier)
   - 格式化
+- [minimist](https://www.npmjs.com/package/minimist)
+  - 处理命令行参数
+- [resolve-from](https://www.npmjs.com/package/resolve-from)
+  - 从给定的路径解析已安装模块的引入路径
+- [hash-sum](https://www.npmjs.com/package/hash-sum)
+  - 哈希生成器
