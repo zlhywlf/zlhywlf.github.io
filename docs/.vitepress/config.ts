@@ -10,15 +10,26 @@ export default defineConfig({
             {text: 'Home', link: '/'},
         ],
 
-        sidebar: [
-            {
-                text: 'java',
-                items: [
-                    {text: '简介', link: '/java/'},
-                    {text: 'gradle', link: '/java/gradle'}
-                ]
-            }
-        ],
+        sidebar: {
+            "/gradle/": [
+                {
+                    text: 'gradle',
+                    collapsed: true,
+                    items: [
+                        {text: '环境准备', link: '/gradle/'},
+                    ]
+                }
+            ],
+            "/java/": [
+                {
+                    text: 'java',
+                    items: [
+                        {text: '简介', link: '/java/'},
+                        {text: 'gradle', link: '/java/gradle'}
+                    ]
+                },
+            ]
+        },
 
         socialLinks: [
             {icon: 'github', link: 'https://github.com/zlhywlf/zlhywlf.github.io'}

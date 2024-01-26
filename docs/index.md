@@ -10,4 +10,7 @@ hero:
     - theme: brand
       text: java
       link: /java/
+    - theme: brand
+      text: gradle
+      link: /gradle/
 ---
