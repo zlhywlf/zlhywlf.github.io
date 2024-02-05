@@ -72,7 +72,7 @@ bash /opt/Miniconda3-latest-Linux-x86_64.sh
 bash /opt/install-nodejs.sh
 nvm install --lts
 npm install -g pnpm
-pnpm config set registry https://registry.npm.taobao.org
+pnpm config set registry https://registry.npmmirror.com
 
 docker exec -it gitlab-runner bash
 
