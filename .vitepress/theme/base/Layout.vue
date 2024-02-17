@@ -13,6 +13,7 @@ const { site, frontmatter } = useData()
       <li><a href="/java/gradle.html">java.gradle</a></li>
       <li><a href="/java/index.html">java</a></li>
       <li><a href="/automation/index.html">automation</a></li>
+      <li><a href="/mac/index.html">mac</a></li>
     </ul>
   </div>
   <div v-else>
