@@ -18,6 +18,9 @@ docker run --privileged -itd -v ~/Docker/sources.list.22.04:/etc/apt/sources.lis
 docker run --privileged -itd -v ~/.ssh:/root/.ssh:ro -v /usr/share/zoneinfo/Asia/Chongqing:/etc/localtime:ro --name=cpython ubuntu:22.04
 
 ## nodejs
-docker run --privileged -itd -p 5173:5173 -v ~/.ssh:/root/.ssh:ro -v /usr/share/zoneinfo/Asia/Chongqing:/etc/localtime:ro --name=node_dev node:20.11.1
+docker run --privileged -itd -p 5173:5173 -v ~/.ssh:/root/.ssh:ro -v /usr/share/zoneinfo/Asia/Chongqing:/etc/localtime:ro --name=node2011 node:20.11.1
 
 npm install -g pnpm && pnpm config set registry https://registry.npmmirror.com
+
+## python
+docker run --privileged -itd -p 5174:5000 -v ~/.ssh:/root/.ssh:ro -v /usr/share/zoneinfo/Asia/Chongqing:/etc/localtime:ro --name=python312 python:3.12
