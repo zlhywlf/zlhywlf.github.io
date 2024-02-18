@@ -14,6 +14,8 @@
     "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {
+    "@types/node": "^20.11.19",
+    "esno": "^4.0.0",
     "prettier": "^3.2.4",
     "vitepress": "1.0.0-rc.41",
     "vue": "^3.4.15"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData, Content } from "vitepress"
 
-const { site, frontmatter } = useData()
+const { site, frontmatter, theme } = useData()
 </script>
 
 <template>
@@ -9,11 +9,7 @@ const { site, frontmatter } = useData()
     <h1>{{ site.title }}</h1>
     <p>{{ site.description }}</p>
     <ul>
-      <li><a href="/gradle/index.html">gradle</a></li>
-      <li><a href="/java/gradle.html">java.gradle</a></li>
-      <li><a href="/java/index.html">java</a></li>
-      <li><a href="/automation/index.html">automation</a></li>
-      <li><a href="/mac/index.html">mac</a></li>
+      <li v-for=" page, index in theme.pages" :key="index"><a :href="page.path">{{ page.name }}</a></li>
     </ul>
   </div>
   <div v-else>
