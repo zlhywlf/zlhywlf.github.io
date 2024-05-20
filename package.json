@@ -16,8 +16,10 @@
   "devDependencies": {
     "@types/node": "^20.11.19",
     "esno": "^4.0.0",
+    "mermaid": "^10.9.1",
     "prettier": "^3.2.4",
-    "vitepress": "1.0.0-rc.41",
+    "vitepress": "^1.2.0",
+    "vitepress-plugin-mermaid": "^2.0.16",
     "vue": "^3.4.15"
   }
 }

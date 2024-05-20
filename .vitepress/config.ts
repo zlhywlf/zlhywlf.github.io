@@ -1,20 +1,24 @@
 import { defineConfigWithTheme } from "vitepress"
-import path from 'node:path'
-import fs from 'node:fs'
+import path from "node:path"
+import fs from "node:fs"
+import { withMermaid } from "vitepress-plugin-mermaid"
 
 interface Page {
   name: string
   path: string
 }
+
 interface CustomThemeConfig {
   pages: Page[]
 }
 
 const getPage = (name: string, file: string): Page[] => {
-  if (!file.endsWith(".md")) { return [] }
+  if (!file.endsWith(".md")) {
+    return []
+  }
   const fileName = file.replace(".md", "")
   return [{
-    name: file.startsWith('index') ? name : `${name}.${fileName}`,
+    name: file.startsWith("index") ? name : `${name}.${fileName}`,
     path: `/${name}/${fileName}.html`
   }]
 }
@@ -30,11 +34,18 @@ const getRoutes = (name: string, dir = "", isRoot = false): Page[] => {
   return pages
 }
 
-export default defineConfigWithTheme<CustomThemeConfig>({
+export default withMermaid(defineConfigWithTheme<CustomThemeConfig>({
   title: "note",
   description: "a note site",
   srcDir: "src",
   themeConfig: {
     pages: getRoutes("src", "", true).sort((a, b) => a.name > b.name ? 1 : -1)
+  },
+  vite: {
+    optimizeDeps: {
+      include: [
+        "mermaid"
+      ]
+    }
   }
-})
+}))
