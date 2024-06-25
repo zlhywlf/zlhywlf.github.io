@@ -203,6 +203,9 @@ ssh -T git@github.com
 
 # 如果报错 Bad owner or permissions on /root/.ssh/config
 chmod 600 ~/.ssh/*
+
+# windows 需要
+git config --global core.autocrlf false
 ```
 
 ~/.ssh/config
