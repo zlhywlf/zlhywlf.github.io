@@ -10,7 +10,7 @@
 
 ## 分支管理
 
-![git-model](https://nvie.com/img/git-model@2x.png)
+![git-model](./imgs/git-flow.png)
 
 - master
   - 生产，保护分支，仅接受组长 push
@@ -64,13 +64,14 @@
 2. 组长在本地以 master 初始化仓库，添加 README.md 以及公共资源后做首次提交，添加初始版本标签
 3. 组长在本地从 master 创建 develop 并添加开发配置后推送 master 与 develop 到远程
 4. 组长在 gitlab 配置
-   1. master 允许 Masters 角色 merge，禁止所有角色 push
-   2. develop 允许 Masters 角色 merge 与 push
-   3. 创建 v\* 标签保护，允许 Masters 角色创建 v 开头的 tag
+  1. master 允许 Masters 角色 merge，禁止所有角色 push
+  2. develop 允许 Masters 角色 merge 与 push
+  3. 创建 v\* 标签保护，允许 Masters 角色创建 v 开头的 tag
 5. 组长在 gitlab 创建里程碑与任务，从 develop 创建任务对应 feature
 6. 组员拉取最新代码到各自 feature 进行开发
 7. 组员完成开发后，在对应任务发起 MR，组长审核后合并 feature 至 release（不存在则为 develop），删除 feature
-8. 版本开发完成后 release（不存在则从 develop 创建） 做测试，存在 bug 则从 release（不存在则为 develop） 创建任务与对应 feature 回到第 6 步
+8. 版本开发完成后 release（不存在则从 develop 创建） 做测试，存在 bug 则从 release（不存在则为 develop） 创建任务与对应
+   feature 回到第 6 步
 9. release 测试完成，组长发起 MR，合并 release 至 develop
 10. 组长发起 MR，合并 release 至 master，添加版本标签，删除 release
 11. 若 master 出现 bug，组长发起任务，从 master 创建任务对应 hotfix 进行处理
@@ -110,20 +111,20 @@ git clone -b 分支 仓库地址
 
 ```json
 {
-    "C_Cpp.default.includePath": [
-        "${default}",
-        "${workspaceFolder}/**"
-    ],
-    "C_Cpp.default.configurationProvider": "${default}",
-    "C_Cpp.autoAddFileAssociations": false,
-    "editor.formatOnSave": true,
-    "files.associations": {
-        "*.H": "cpp",
-        "*.C": "cpp"
-    },
-    "cmake.configureArgs": [
-        "-DDEVELOP_PSO:BOOL=TRUE"
-    ]
+  "C_Cpp.default.includePath": [
+    "${default}",
+    "${workspaceFolder}/**"
+  ],
+  "C_Cpp.default.configurationProvider": "${default}",
+  "C_Cpp.autoAddFileAssociations": false,
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.H": "cpp",
+    "*.C": "cpp"
+  },
+  "cmake.configureArgs": [
+    "-DDEVELOP_PSO:BOOL=TRUE"
+  ]
 }
 ```
 
