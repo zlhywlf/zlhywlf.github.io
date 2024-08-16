@@ -2,8 +2,8 @@
 
 ## 环境准备
 
-[Oracle JDK](https://www.oracle.com/cn/java/technologies/downloads/archive/#JavaSE)
-
+- [Oracle JDK](https://www.oracle.com/cn/java/technologies/downloads/archive/#JavaSE)
+- [Open JDK](https://jdk.java.net/archive/)
 ### Windows
 
 1. 下载 `Windows x64 Compressed Archive` 版本
@@ -16,59 +16,3 @@
     ```powershell
     java -version
     ```
-
-## 基本数据类型
-
-### 整数
-
-- byte
-- short
-- int
-- long
-
-## 浮点数
-
-- float
-- double
-
-## 布尔
-
-- boolean
-
-## 字符
-
-- char
-
-## 运算符
-
-### 算数
-
-- \+
-- \-
-- \*
-- \/
-- %
-- ++
-- \--
-
-### 关系
-
-- \>
-- <
-- \>=
-- <=
-- ==
-- !=
-
-### 逻辑
-
-- &&
-- ||
-
-### 赋值
-
-- =
-- +=
-- -=
-- *=
-- /=
