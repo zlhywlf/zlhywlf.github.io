@@ -40,6 +40,8 @@ getent group
 # 添加用户 user
 # 同时新增组 user
 useradd user
+# 创建家目录并指定shell
+useradd -m -s /bin/bash user
 
 # 修改文件归属
 # 递归修改 directory 目录归于用户 user 与组 user 
