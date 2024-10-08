@@ -4,6 +4,8 @@
 
 - [Oracle JDK](https://www.oracle.com/cn/java/technologies/downloads/archive/#JavaSE)
 - [Open JDK](https://jdk.java.net/archive/)
+- [tutorial](https://docs.oracle.com/javase/tutorial/tutorialLearningPaths.html)
+
 ### Windows
 
 1. 下载 `Windows x64 Compressed Archive` 版本
