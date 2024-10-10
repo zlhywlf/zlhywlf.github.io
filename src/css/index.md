@@ -8,6 +8,10 @@
 - [caniuse](https://caniuse.com)
 - [tool](https://html-css-js.com/)
 - [The Shapes of CSS](https://css-tricks.com/the-shapes-of-css/)
+- [fonts](https://www.fonts.net.cn/)
+- [fonts editor](https://font.qqe2.com/)
+- [iconfont](https://www.iconfont.cn/)
+- [CSS Sprites](http://www.spritecow.com/)
 
 ## 定义位置
 
