@@ -12,6 +12,7 @@
 - [fonts editor](https://font.qqe2.com/)
 - [iconfont](https://www.iconfont.cn/)
 - [CSS Sprites](http://www.spritecow.com/)
+- [Front-End Coding Guidelines](https://guide.aotu.io/)
 
 ## 定义位置
 
@@ -137,3 +138,33 @@
 - 类选择器、属性选择器、伪类: 10
 - 元素选择器、伪元素: 1
 - 通用选择器: 0
+
+## 流
+
+- 标准流 normal flow (默认)：从左到右，从上到下
+
+## 布局
+
+- float
+- flex
+- grid
+
+## 定位
+
+- 静态 static (默认)：不脱离标准流，不能偏移
+- 相对 relative：不脱离标准流，相对于父元素偏移
+- 绝对 absolute：脱离标准流，相对于上级可定位的元素偏移
+- 固定 fixed：脱离标准流，相对于视口偏移
+- 粘性 sticky：不脱离标准流，相对于父元素随视口偏移
+
+## 设置随机颜色
+
+```js
+document.querySelectorAll(".item").forEach((item) => {
+  item.style.backgroundColor = `rgb(
+        ${Math.random() * 255},
+        ${Math.random() * 255},
+        ${Math.random() * 255}
+        )`
+})
+```
