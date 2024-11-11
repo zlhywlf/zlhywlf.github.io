@@ -1,4 +1,4 @@
 {
-  "extends": "@jupiter/tsconfig/tsconfig.node.json",
+  "extends": "@jupiter/config-ts/tsconfig.node.json",
   "include": ["src"]
 }
