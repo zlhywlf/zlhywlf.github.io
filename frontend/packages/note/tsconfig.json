@@ -1,0 +1,3 @@
+{
+  "extends": "@jupiter/tsconfig/tsconfig.node.json"
+}

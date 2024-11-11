@@ -1,0 +1,11 @@
+{
+  "name": "@jupiter/config-prettier",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {
+    "prettier": "catalog:"
+  }
+}
