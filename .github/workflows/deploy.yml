@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'frontend/packages/note/**'
+      - 'backend/java/**'
   workflow_dispatch:
 
 permissions:
