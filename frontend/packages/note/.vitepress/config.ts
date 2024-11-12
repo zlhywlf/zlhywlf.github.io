@@ -42,7 +42,7 @@ export default withMermaid(defineConfigWithTheme<CustomThemeConfig>({
     pages: getRoutes("src", "", true).sort((a, b) => a.name > b.name ? 1 : -1),
     outline: {
       level: [2, 3],
-      label: "目录"
+      label: "Content"
     }
   },
   vite: {
