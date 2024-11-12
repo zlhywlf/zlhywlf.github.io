@@ -2,7 +2,8 @@ name: Deploy note site to Pages
 
 on:
   push:
-    branches: [ master ]
+    paths:
+      - 'frontend/packages/note/**'
   workflow_dispatch:
 
 permissions:
