@@ -10,7 +10,7 @@
 
 1. 下载 `Windows x64 Compressed Archive` 版本
 2. 解压到任意目录
-3. 添加环境变量 `JAVA_HOME`
+3. 添加环境变量 `JAVA_HOME`(see [powershell](../powershell/index#持久修改或新增))
     ```powershell
     [Environment]::SetEnvironmentVariable('JAVA_HOME', '%USERPROFILE%\JDK_DIR', 'User')
     ```
