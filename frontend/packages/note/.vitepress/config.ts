@@ -2,13 +2,14 @@ import { defineConfigWithTheme } from "vitepress"
 import path from "node:path"
 import fs from "node:fs"
 import { withMermaid } from "vitepress-plugin-mermaid"
+import type { DefaultTheme } from "vitepress"
 
 interface Page {
   name: string
   path: string
 }
 
-interface CustomThemeConfig {
+interface CustomThemeConfig extends DefaultTheme.Config {
   pages: Page[]
 }
 
@@ -36,10 +37,13 @@ const getRoutes = (name: string, dir = "", isRoot = false): Page[] => {
 
 export default withMermaid(defineConfigWithTheme<CustomThemeConfig>({
   title: "Note",
-  description: "A note site",
   srcDir: "src",
   themeConfig: {
-    pages: getRoutes("src", "", true).sort((a, b) => a.name > b.name ? 1 : -1)
+    pages: getRoutes("src", "", true).sort((a, b) => a.name > b.name ? 1 : -1),
+    outline: {
+      level: [2, 3],
+      label: "目录"
+    }
   },
   vite: {
     optimizeDeps: {
