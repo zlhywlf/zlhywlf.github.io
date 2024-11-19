@@ -26,10 +26,7 @@ REVOKE ALL ON `db_name`.* FROM 'foo'@'localhost';
 
 [Reference](https://dev.mysql.com/doc/refman/8.4/en/sql-data-definition-statements.html)
 
-[course](./course.md#DDL)
 
 ## DML(data manipulation language)
 
 [Reference](https://dev.mysql.com/doc/refman/8.4/en/sql-data-manipulation-statements.html)
-
-[course](./course.md#DML)
