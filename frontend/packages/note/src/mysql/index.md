@@ -19,10 +19,21 @@ tar xf mysql-8.4.0-linux-glibc2.17-x86_64.tar
 
 ## 安装
 
+### linux
+
 ```shell
 useradd mysql
 chown -R mysql:mysql mysql-8.4.0-linux-glibc2.17-x86_64
 mv mysql-8.4.0-linux-glibc2.17-x86_64 /home/mysql/mysql-8.4.0
+```
+
+### docker
+
+```shell
+docker run --name=mysql8.4 --restart on-failure -d container-registry.oracle.com/mysql/community-server:8.4
+# 获取初始密码
+docker logs mysql8.4 2>&1 | grep GENERATED
+docker exec -it mysql8.4 mysql -uroot -p
 ```
 
 ## 配置

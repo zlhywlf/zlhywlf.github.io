@@ -8,3 +8,7 @@ cache
 .pnpm-store
 .gradle
 build
+scripts/python/_version.py
+.mypy_cache
+.ruff_cache
+__pycache__
