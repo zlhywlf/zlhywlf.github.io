@@ -11,10 +11,13 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "catalog:",
+    "sass": "catalog:",
     "vite": "catalog:",
+    "vite-plugin-vuetify": "catalog:",
     "vue-tsc": "catalog:"
   },
   "dependencies": {
-    "vue": "catalog:"
+    "vue": "catalog:",
+    "vuetify": "catalog:"
   }
 }
