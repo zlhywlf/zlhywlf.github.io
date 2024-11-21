@@ -12,3 +12,4 @@ scripts/python/_version.py
 .mypy_cache
 .ruff_cache
 __pycache__
+*.tsbuildinfo

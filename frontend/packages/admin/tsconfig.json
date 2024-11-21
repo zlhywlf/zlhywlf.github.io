@@ -1,0 +1,8 @@
+{
+  "extends": "@jupiter/config-ts/tsconfig.node.json",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ]
+}
