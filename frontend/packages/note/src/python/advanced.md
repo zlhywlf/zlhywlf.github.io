@@ -37,3 +37,13 @@ flowchart LR
 - \_\_getattribute__: 任何属性都会走这个方法, 找不到时抛出 `AttributeError` 后会调用 \_\_getattr__
 
 <<< @/../../../../scripts/python/advanced/obj_getattr_getattribute.py
+
+## 多线程
+
+- Queue
+- Lock
+- RLock
+- Condition
+- Semaphore
+
+<<< @/../../../../scripts/python/advanced/obj_thread.py
