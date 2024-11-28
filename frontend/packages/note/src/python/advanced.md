@@ -31,3 +31,9 @@ flowchart LR
 
 <<< @/../../../../scripts/python/advanced/obj_str_repr.py
 
+### \_\_getattr__ 与 \_\_getattribute__
+
+- \_\_getattr__: 找不到属性时调用
+- \_\_getattribute__: 任何属性都会走这个方法, 找不到时抛出 `AttributeError` 后会调用 \_\_getattr__
+
+<<< @/../../../../scripts/python/advanced/obj_getattr_getattribute.py
