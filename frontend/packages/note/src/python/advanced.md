@@ -47,3 +47,7 @@ flowchart LR
 - Semaphore
 
 <<< @/../../../../scripts/python/advanced/obj_thread.py
+
+## 协程
+
+<<< @/../../../../scripts/python/advanced/obj_async.py
